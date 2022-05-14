@@ -44,7 +44,7 @@ export class UserComponent implements OnInit {
     this.router.navigate(['/user']);
   }
 
-  EditElement(id: HTMLInputElement, name: HTMLInputElement, desc: HTMLInputElement) {
+  EditElement(id: any, name: HTMLInputElement, desc: HTMLInputElement) {
     let users = localStorage.getItem("user");
     let parsedUsers ;
     if (users === null ) {
@@ -53,7 +53,7 @@ export class UserComponent implements OnInit {
       parsedUsers = JSON.parse(users);
     }
     let newParsedUsers = parsedUsers.map((e: any) => {
-      if (e.id == id) return {id: id.value, "Name": name.value, "Description": desc.value};
+      if (e.id == id) return {"id": id, "Name": name.value, "Description": desc.value};
       else return e;
     });
     localStorage.setItem('user', JSON.stringify(
