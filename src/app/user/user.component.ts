@@ -16,8 +16,7 @@ export class UserComponent implements OnInit {
 
   getElements() {
     let users = localStorage.getItem("user");
-    let parsedUsers = (users === null ? [] :JSON.parse(users));
-    return parsedUsers;
+    return (users === null ? [] :JSON.parse(users));
   }
 
   redirectTo(uri: string) {
