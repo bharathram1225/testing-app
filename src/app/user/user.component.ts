@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void { }
   user: any = JSON.parse(localStorage.getItem('user') as string);
 
-  AddElement(name: any, desc: any) {
+  AddElement(name: HTMLInputElement, desc: HTMLInputElement) {
     let users = localStorage.getItem("user");
     let parsedUsers;
     if (users === null) {
@@ -22,12 +22,12 @@ export class UserComponent implements OnInit {
       parsedUsers = JSON.parse(users);
     }
     localStorage.setItem('user', JSON.stringify(
-      [...parsedUsers, {"id": parsedUsers.length + 1, "Name" : name.value, "Description": desc.value}]
+      [...parsedUsers, {"id": parsedUsers[parsedUsers.length - 1].id + 1, "Name" : name.value, "Description": desc.value}]
       ));
     this.router.navigate(['/user']);
   }
 
-  DeleteElement(id: any) {
+  DeleteElement(id: HTMLInputElement) {
     let users = localStorage.getItem("user");
     let parsedUsers ;
     if (users === null) {
@@ -44,7 +44,7 @@ export class UserComponent implements OnInit {
     this.router.navigate(['/user']);
   }
 
-  EditElement(id: any, name: any, desc: any) {
+  EditElement(id: HTMLInputElement, name: HTMLInputElement, desc: HTMLInputElement) {
     let users = localStorage.getItem("user");
     let parsedUsers ;
     if (users === null ) {
