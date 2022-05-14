@@ -1,0 +1,2 @@
+1. Create a card layout having user details like firstname, lastname, designation, mobile, email, edit and delete icon.
+2. Navigate Sign, SignUp, Reset Password screen, Home Screen along with SignOut Button
