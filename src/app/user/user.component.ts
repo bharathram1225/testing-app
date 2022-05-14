@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
       parsedUsers = JSON.parse(users);
     }
     localStorage.setItem('user', JSON.stringify(
-      [...parsedUsers, {"id": parsedUsers[parsedUsers.length - 1].id + 1, "Name" : name.value, "Description": desc.value}]
+      [...parsedUsers, {"id": (parsedUsers.length === 0 ? 1 : parsedUsers[parsedUsers.length - 1].id + 1), "Name" : name.value, "Description": desc.value}]
       ));
     this.router.navigate(['/user']);
   }
