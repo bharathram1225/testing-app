@@ -15,8 +15,8 @@ export class UserComponent implements OnInit {
 
   AddElement(name: any, desc: any) {
     let users = localStorage.getItem("user");
-    let parsedUsers ;
-    if (users === null ) {
+    let parsedUsers;
+    if (users === null) {
       parsedUsers = []
     } else {
       parsedUsers = JSON.parse(users);
@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
   DeleteElement(id: any) {
     let users = localStorage.getItem("user");
     let parsedUsers ;
-    if (users === null ) {
+    if (users === null) {
       parsedUsers = []
     } else {
       parsedUsers = JSON.parse(users);
